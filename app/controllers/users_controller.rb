@@ -23,9 +23,9 @@ class UsersController < ApplicationController
     else
       flash.now[:danger] = 'ユーザーの登録に失敗しました。'
       render :new
-    end
+  end
     
-    def followings
+  def followings
     @user = User.find(params[:id])
     @followings = @user.followings.page(params[:page])
     counts(@user)
